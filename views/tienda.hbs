@@ -1,0 +1,19 @@
+<div class="container d-flex flex-wrap justify-content-around">
+    {{#each product}}
+    <div class="card mt-5" style="width: 18rem;">
+        <img src="{{{thumbnail}}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{{title}}}</h5>
+            <p class="card-text">{{{description}}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item ">Price: {{{price}}}$</li>
+            <li class="list-group-item">Rate: {{{rating}}}</li>
+            <li class="list-group-item">Brand: {{{brand}}}</li>
+        </ul>
+        <div class="card-body btn btn-dark d-block">
+            <a href="/tienda/{{_id}}" class="card-link text-decoration-none text-light">Show details</a>
+        </div>
+    </div>
+    {{/each}}
+</div>
