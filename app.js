@@ -1,10 +1,10 @@
 const express = require('express')
 const path = require('path')
-
-
+const hbs = require('hbs');
 const app = express()
 app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'views'))
+hbs.registerPartials(__dirname + "/views/partials")
 
 require('./db/ironshop')
 
@@ -27,12 +27,13 @@ app.get('/tienda', (req, res) => {
         .catch(err => console.log(err))
 })
 
-app.get('/tienda/:_id', (req, res) => {
+app.get('/details/:_id', (req, res) => {
 
     Product
         .findById(req.params._id)
         .then(products => {
-            res.render('tienda', { product: products })
+            console.log(products)
+            res.render('details', { product: products })
         })
         .catch(err => console.log(err))
 })
