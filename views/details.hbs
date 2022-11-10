@@ -1,22 +1,22 @@
-{{#each product}}
 <div class="container d-flex flex-wrap">
+
     <div class="card mt-5" style="width: 18rem;">
-        <img src="{{{thumbnail}}}" class="card-img-top" alt="...">
+        <img src="{{{product.thumbnail}}}" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">{{{title}}}</h5>
-            <p class="card-text">{{{description}}}</p>
+            <h5 class="card-title">{{{product.title}}}</h5>
+            <p class="card-text">{{{product.description}}}</p>
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item ">Price: {{{price}}}$</li>
-            <li class="list-group-item">Rate: {{{rating}}}</li>
-            <li class="list-group-item">Discount: {{{discountPercentage}}}%</li>
-            <li class="list-group-item">Stock: {{{stock}}}</li>
-            <li class="list-group-item">Category: {{{category}}}</li>
+            <li class="list-group-item ">Price: {{{product.price}}}$</li>
+            <li class="list-group-item">Rate: {{{product.rating}}}</li>
+            <li class="list-group-item">Discount: {{{product.discountPercentage}}}%</li>
+            <li class="list-group-item">Stock: {{{product.stock}}}</li>
+            <li class="list-group-item">Category: {{{product.category}}}</li>
 
         </ul>
         <div class="card-body btn btn-dark d-block">
             <a href="#" class="card-link text-decoration-none text-light">Buy!</a>
         </div>
     </div>
+
 </div>
-{{/each}}
